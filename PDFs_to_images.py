@@ -72,9 +72,10 @@ def convert(pdf_folder, output_folder='temp', pages_per_chunk=25):
                 continue
 
 if __name__ == "__main__":
-    # Allow the user to define the input and output folder paths
-    pdf_folder = input("Enter the path of the input folder containing PDFs: ")  # User-defined input folder
-    output_folder = input("Enter the path of the output folder for images: ")  # User-defined output folder
+    # User-defined input folder
+    pdf_folder = input("Enter the path of the input folder containing PDFs: ")  
+    # User-defined output folder
+    output_folder = input("Enter the path of the output folder for images: ")  
     
     # Call the convert function
     convert(pdf_folder, output_folder)
