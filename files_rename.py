@@ -32,18 +32,14 @@ def rename_files(file_folder, formats_to_rename, base_name, start_index):
         print(f"Renamed '{file}' to '{new_name}'")
 
 if __name__ == "__main__":
-    
     # User-defined folder path
     file_folder = input("Enter the path of the folder containing files: ")
-    
     # User-defined formats
     formats_input = input("Enter the file formats to rename (comma-separated, e.g., '.txt, .jpg'): ") 
     # Convert the input into a list of formats
     formats_to_rename = [fmt.strip() for fmt in formats_input.split(',')] 
-    
     # User-defined base name (e.g., "document")
     base_name = input("Enter the base name for the new files (e.g., 'document'): ")
-
     # User-defined starting index
     start_index = int(input("Enter the starting index for renaming (e.g., 1): "))
     
