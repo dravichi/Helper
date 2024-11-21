@@ -51,11 +51,13 @@ def convert(pdf_folder, output_folder='temp', pages_per_chunk=25):
                     # Check if the PDF is encrypted and try to decrypt it
                     if reader.is_encrypted:
                         print(f"PDF {pdf_path} is encrypted. Attempting to decrypt...")
+                        # Try decrypting with an empty password (if no password is set)
                         try:
-                            reader.decrypt("")  # Try decrypting with an empty password (if no password is set)
+                            reader.decrypt("")
+                         # Skip this encrypted PDF if there's an error
                         except Exception as decryption_error:
                             print(f"Failed to decrypt {pdf_path}: {decryption_error}")
-                            continue  # Skip this encrypted PDF
+                            continue 
 
                     total_pages = len(reader.pages)  # Get the number of pages in the PDF
 
@@ -64,10 +66,10 @@ def convert(pdf_folder, output_folder='temp', pages_per_chunk=25):
                     # Specify the pages to convert (ensure to handle last chunk if it's smaller)
                     pages = list(range(i + 1, min(i + pages_per_chunk, total_pages) + 1))
                     start_index = pdf_to_images(pdf_path, output_folder, start_index, pages)
-                    
+            # Skip to the next file if there's an error
             except Exception as e:
                 print(f"Error processing {pdf_path}: {e}")
-                continue  # Skip to the next file if there's an error
+                continue
 
 if __name__ == "__main__":
     # Allow the user to define the input and output folder paths
