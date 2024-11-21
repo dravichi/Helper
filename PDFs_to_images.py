@@ -76,5 +76,5 @@ if __name__ == "__main__":
     pdf_folder = input("Enter the path of the input folder containing PDFs: ")  # User-defined input folder
     output_folder = input("Enter the path of the output folder for images: ")  # User-defined output folder
     
-    # Call the conversion function
+    # Call the convert function
     convert(pdf_folder, output_folder)
