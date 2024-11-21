@@ -47,5 +47,5 @@ if __name__ == "__main__":
     # Allow the user to define the starting index
     start_index = int(input("Enter the starting index for renaming (e.g., 1): "))
     
-    # Call the rename function
+    # Call the rename_files function
     rename_files(file_folder, formats_to_rename, base_name, start_index)
